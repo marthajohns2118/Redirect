@@ -1,3 +1,21 @@
-<script>
-    window.location.href = 'http://annsom.online/'+window.location.href.split('#')[1];
-  </script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      window.onload = function () {
+        const hash = window.location.hash;
+        if (hash && hash.length > 1) {
+          const redirectTo = 'http://annsom.online/' + hash.substring(1);
+          window.location.replace(redirectTo); // better than href for redirect
+        } else {
+          document.body.innerHTML = "Missing redirect info in the URL.";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
